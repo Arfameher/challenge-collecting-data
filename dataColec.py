@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from csv 
 
-with open('immo_data.csv', 'w', encoding='utf8', newline='') as f:
+with open('csv.csv', 'w', encoding='utf-8', newline='') as f:
     the_writer = writer(f)
     description = ['Local','Type of property','Subtype of property', 'Price', 'Type of sale', 'Number of rooms','Area','Fully equipped kitchen','Furnished','Open fire','Terrace','Garden','Surface of the land'
 				,'Surface of plot of land', 'Numbers of facades','Swimming pool','State of building']
@@ -13,6 +13,14 @@ with open('immo_data.csv', 'w', encoding='utf8', newline='') as f:
 
 with open('links.txt', 'r') as links:
     for url in links:
+    	
+        my_url = url
+        #     my_url = "https://www.immoweb.be/en/classified/house/for-sale/laeken/1020/9560029?searchId=616448237ea81"
+
+        res = requests.get(my_url).text
+        soup = BeautifulSoup(res, "lxml")
+
+
         items = soup.find_all('main',{'class':'main'})
 
 
@@ -27,7 +35,22 @@ with open('links.txt', 'r') as links:
 			#dictionary that contains the whole page
 			real_estate_description ={}
 
+			title = soup.find('h1',{'class':'classified__title'})
+		
 			
+
+			"""
+			naming the property
+			"""
+
+
+			if title is not None:
+				title = title.text.replace('\n','')
+				title = ' '.join(title.split()).split()[0]
+				real_estate_description['type of property']= title
+
+
+
 			'''
 			is going to only get the description and the data that belongs to it
 			'''
@@ -51,6 +74,16 @@ with open('links.txt', 'r') as links:
 			for dic in headers:
 				real_estate_description[dic]= data[count]
 				count+=1
+
+
+			"""
+			override the price, it is much easier this way
+			"""
+			price = soup.find('p',{'class':'classified__price'})
+		
+			if price is not None:
+					price = price.text.replace('\n','').split()[0]
+					real_estate_description['Price'] = price
 
 			'''
 			append everything in the csv file we made
@@ -96,7 +129,8 @@ with open('links.txt', 'r') as links:
 					pass
 					
 				try:
-					kitchen = real_estate_description.get('Kitchen type')
+					if real_estate_description.get('Kitchen type') is not None:
+							kitchen = 'Yes'
 				except:
 					pass
 						
@@ -156,3 +190,4 @@ with open('links.txt', 'r') as links:
 
 				#append the rows
 				the_writer.writerow(info)
+
