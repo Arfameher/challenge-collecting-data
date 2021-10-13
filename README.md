@@ -6,7 +6,8 @@ Data collection from real estate websites to make price predictions on real esta
 
 ***
 ### Description
-This project is about creating a large dataset on real estate for price prediction purposes. Here we have chosen to collect data from immoweb website. This is a data collection tool that can collect real estate data from websites. The data is to be used to make price predictions on real estate sales in Belgium. The code could collect the following information from every listing on ImmoWeb.be website and the data is stored in a csv file.
+This project is about creating a large dataset on real estate for price prediction purposes. This is a data collection tool that can collect real estate data from websites. The data is to be used to make price predictions on real estate sales in Belgium. The code could collect the following information from every listing on ImmoWeb.be website and the data is stored in a `.csv` file.
+
 - Locality
 - Type of property
 - Subtype of property
@@ -28,37 +29,43 @@ This project is about creating a large dataset on real estate for price predicti
 ***
 ### Installation
 For the codes to work, the following packages are required:
-  * Selenium
-  * BeautifulSoup
-  * Pandas
+
+  * [Selenium](https://selenium-python.readthedocs.io/installation.html) 
+  * BeautifulSoup: `pip install beautifulsoup4`   
+  * Pandas: `pip install pandas`
 
 ***
 ### Usage
-The tool consists of two codes, named *'scraping_links.py'*and *'scrapeData.py'*.
-  * *scraping_links.py* is used to access the search results form the website and it collects the links to each property in the search results and saves them into a '.txt' file. It has been demonstrated that it can collect 10,000 links from the ImmoWeb website.
-  * *scrapeData.py* is used to access each link and scrape the required data listed in the description section and saves the datato a '.csv' file.
+The tool consists of two codes, named `scraping_links.py` and `scrapeData.py`.
+  * `scraping_links.py` is used to access the search results form the website and it collects the links to each property in the search results and saves them into a `.txt` file. It has been demonstrated that it can collect up to 10,000 links from the ImmoWeb website.
+  * `scrapeData.py` is used to access each link and scrape the required data listed in the description section and saves the data to a `.csv` file.
 
-For successful scraping, *scraping_links.py* needs to rum before *scrapeData.py*. 
+For successful scraping, `scraping_links.py` needs to run before `scrapeData.py`. 
 
 ***
 ### Visuals
-Running the 1stcode:
-![User inputs](../../../Pictures/Screenshot from 2021-10-13 15-32-44.png)
-sample data sheet from pandas.
+Running the `scraping_links.py`:
+<p align="center">
+  <img src="<p align="left">
+  <img src="![Screenshot from 2021-10-13 15-32-44](../../../Pictures/Screenshot from 2021-10-13 15-32-44.png)" width="400" height="90" />                       </p>
 
-![pandasVisualisation](pandasVisualisation.png)
+Sample data visualization sheet from pandas.
+<p align="center">
+  <img src="<p align="left">
+  <img src="![![dataScaprePandas](dataScaprePandas.png))" width="800" height="500" />                       </p>
 
 ***
-### Contributors
-This project is workedout by the following team:
+#### Contributors
+This project is worked-out by the following team:
 
 - [Arfameher](https://github.com/Arfameher)                                                                                    
 - [Mekonnen](https://github.com/mokegg)                                                                                           
 - [Sebastian](https://github.com/sebastianchavezz)                                                                                                                                           
 ***
 ### What could be improved 
-Threading has been implemented on the first code, and the time needed to extract the links was shortened dramatically. The speed of data collection could be improved by implementing threadig on the second code as well.
+Threading has been implemented on the `scraping_links.py`, and the time needed to extract the links was shortened dramatically. The speed of data collection from each property could be also be improved by implementing threadig on the `scrapeData.py` as well.
 
+***
 ### Timeline
 October 2021
 
