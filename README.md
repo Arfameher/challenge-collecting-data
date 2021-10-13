@@ -36,23 +36,22 @@ For the codes to work, the following packages are required:
 
 ***
 ### Usage
-The tool consists of two codes, named `scraping_links.py` and `scrapeData.py`.
-  * `scraping_links.py` is used to access the search results form the website and it collects the links to each property in the search results and saves them into a `.txt` file. It has been demonstrated that it can collect up to 10,000 links from the ImmoWeb website.
+The tool consists of two codes, named `Scraping_links.py` and `scrapeData.py`.
+  * `Scraping_links.py` is used to access the search results form the website and it collects the links to each property in the search results and saves them into a `.txt` file. It has been demonstrated that it can collect up to 10,000 links from the ImmoWeb website.
   * `scrapeData.py` is used to access each link and scrape the required data listed in the description section and saves the data to a `.csv` file.
 
-For successful scraping, `scraping_links.py` needs to run before `scrapeData.py`. 
+For successful scraping, `Scraping_links.py` needs to run before `scrapeData.py`. 
 
 ***
 ### Visuals
-Running the `scraping_links.py`:
-<p align="center">
-  <img src="<p align="left">
-  <img src="![Screenshot from 2021-10-13 15-32-44](../../../Pictures/Screenshot from 2021-10-13 15-32-44.png)" width="400" height="90" />                       </p>
+Running the `Scraping_links.py`:
+<p align="left">
+  <img src="https://cdn.discordapp.com/attachments/897016721729269832/897849727813566494/Screenshot_from_2021-10-13_15-32-44.png" width="400" height="90" />                       </p>
 
 Sample data visualization sheet from pandas.
-<p align="center">
-  <img src="<p align="left">
-  <img src="![![dataScaprePandas](dataScaprePandas.png))" width="800" height="500" />                       </p>
+<p align="left">
+  <img src="https://cdn.discordapp.com/attachments/897016721729269832/897849409704951838/pandasVisualisation.png" width="800" height="500" />                       
+</p>
 
 ***
 #### Contributors
@@ -63,7 +62,7 @@ This project is worked-out by the following team:
 - [Sebastian](https://github.com/sebastianchavezz)                                                                                                                                           
 ***
 ### What could be improved 
-Threading has been implemented on the `scraping_links.py`, and the time needed to extract the links was shortened dramatically. The speed of data collection from each property could be also be improved by implementing threadig on the `scrapeData.py` as well.
+Threading has been implemented on the `Scraping_links.py`, and the time needed to extract the links was shortened dramatically. The speed of data collection from each property could be also be improved by implementing threadig on the `scrapeData.py` as well.
 
 ***
 ### Timeline
