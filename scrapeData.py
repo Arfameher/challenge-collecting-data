@@ -6,7 +6,7 @@ import requests
 import time 
 import re
 import csv
-import pandas as pd
+
 
 #this works only in my pc 
 PATH = "C:\Program Files (x86)\chromedriver.exe"
@@ -114,83 +114,83 @@ with open('links.txt', 'r') as links:
 	    			type_of_property = real_estate_description.get('type of property')
 
 	    		else: 
-	    			type_of_property = '/'
+	    			type_of_property ='None'
 
 	    		if real_estate_description.get('subtype of property') is not None: 
 	    			subtypeProperty = real_estate_description.get('subtype of property')
 	    		else:
-	    			subtypeProperty = '/'
+	    			subtypeProperty ='None'
 
 	    		if real_estate_description.get('Price') is not None: 
 	    			price = real_estate_description.get('Price')
 	    		else:
-	    			price = '/'
+	    			price ='None'
 
 	    		if real_estate_description.get('typer of sale') is not None: 
 	    			type_of_sale = real_estate_description.get('type of sale')
 	    		else:
-	    			type_of_sale = '/'
+	    			type_of_sale ='None'
 
 	    		if real_estate_description.get('Bedrooms') is not None: 
 	    			rooms = real_estate_description.get('Bedrooms')
 
 	    		else:
-	    			rooms = '/'
+	    			rooms ='None'
 
 	    		if real_estate_description.get('Living area') is not None: 
 	    			area = real_estate_description.get('Living area')	    			
 	    		else:
-	    			area = '/'
+	    			area ='None'
 
 	    		if real_estate_description.get('Kitchen type') is not None: 
-	    			kitchen = '1'
+	    			kitchen = 'Yes'
 	    		else:
-	    			kitchen ='0'
+	    			kitchen ='No'
 
 	    		if real_estate_description.get('Terrace') is not None:
-	    			terrace = '1'
+	    			terrace = 'Yes'
 	    		else:
-	    			terrace = '0'
+	    			terrace = 'No'
 
 	    		if real_estate_description.get('Garden') is not None:
-	    			garden = '1'
+	    			garden = 'Yes'
 	    		else:
-	    			garden ='0'
+	    			garden ='No'
 
 	    		if real_estate_description.get('Furnished') is not None:
-	    			furnished = '1'
+	    			furnished = 'Yes'
 	    		else: 
-	    			furnished = '0'
+	    			furnished = 'No'
 	    		
 	    		if real_estate_description.get('open fire') is not None:
-	    			openfire = '1'
+	    			openfire = 'Yes'
 	    		else:
-	    			openfire = '0'
+	    			openfire = 'No'
 
 	    		if real_estate_description.get('Surface of the plot'):
 	    			plot = real_estate_description.get('Surface of the plot')
 	    		else: 
-	    			plot = '/'
+	    			plot ='None'
 
 	    		if real_estate_description.get('Building condition'):
 	    			state_building = real_estate_description.get('Building condition')
 	    		else:
-	    			state_building = '/'
+	    			state_building ='None'
 
 	    		if real_estate_description.get('Swimming pool') is not None:
-	    			pool = '1'
+	    			pool = 'Yes'
 	    		else:
-	    			pool = '0'
+	    			pool = 'No'
 
 	    		if real_estate_description.get('Number of frontages') is not None:
 	    			facades = real_estate_description.get('Number of frontages')
 	    		else: 
-	    			facades = '/'
+	    			facades ='None'
 
 	    		if real_estate_description.get('Living area') is not None:
 	    			surface = real_estate_description.get('Living area')
 	    		else:
-	    			surface = '/'
+	    			surface ='None'
 
 	    		info = [local,type_of_property,subtypeProperty,price,type_of_sale,rooms,area,kitchen,furnished,openfire,terrace,garden,surface,plot,facades,pool,state_building]
 
